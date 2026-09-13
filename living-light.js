@@ -38,8 +38,8 @@ void main(){
   float v=f*.62+glow*.55;
   vec3 dark=mix(vec3(.028,.020,.017),vec3(.115,.062,.040),smoothstep(.18,.92,v));
   dark=mix(dark,vec3(.34,.19,.105),smoothstep(.78,1.12,v)*.55);
-  vec3 ivory=mix(vec3(.980,.958,.922),vec3(.949,.882,.827),smoothstep(.10,.95,v));
-  ivory=mix(ivory,vec3(.996,.973,.933),glow*.5);
+  vec3 ivory=mix(vec3(1.,.976,.945),vec3(.910,.790,.752),smoothstep(.06,.96,v));
+  ivory=mix(ivory,vec3(.945,.827,.671),glow*.55);
   vec3 col=mix(dark,ivory,u_mode);
   col*=mix(u_i,1.+(u_i-1.)*.35,u_mode);
   float hash=fract(sin(dot(gl_FragCoord.xy,vec2(12.9898,78.233)))*43758.5453);
